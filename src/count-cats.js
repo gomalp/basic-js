@@ -16,6 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function countCats(matrix) {
   // remove line with error and write your code here
+  if(!Array.isArray(matrix)) return false;
   const CAT="^^";
   let count=0;
   matrix.forEach(function(item) {
