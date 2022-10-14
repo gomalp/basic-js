@@ -20,6 +20,7 @@ function countCats(matrix) {
   const CAT="^^";
   let count=0;
   matrix.forEach(function(item) {
+      if(!Array.isArray(item)) return false;
       if(item.includes(CAT,0)) count+=1});
     return count;
 }
