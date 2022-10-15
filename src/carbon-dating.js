@@ -21,9 +21,9 @@ function dateSample(sampleActivity) {
   const HALF_LIFE_PERIOD = 5730;
   const k = 0.639 / HALF_LIFE_PERIOD;
   const MODERN_ACTIVITY=15;
-  if(typeof sampleActivity !=='string' ) return false;
+  if(typeof sampleActivity !=='string'  || isNaN(sampleActivity) || Number(sampleActivity)<=0) return false;
   let t=Math.log(MODERN_ACTIVITY/sampleActivity)/k;
-  return Math.round(t);
+  return t>0 ? Math.round(t):false;
 }
 
 module.exports = {
